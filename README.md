@@ -62,7 +62,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 
-### PROCEDURE:
+## PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
 2.	Connect the board to your computer via the USB cable.
 3.	If needed, install the drivers.
@@ -74,24 +74,9 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 9.	Ensure safety before powering up the device 
 10.	Plot the graph for the output voltage vs the resistance 
 
+ 
+ 
 
-### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
 
@@ -115,18 +100,85 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 σ = √[(1 - 4.6)2 + (3 - 4.6)2 + ... + (8 - 4.6)2)]/5
 σ = √(12.96 + 2.56 + 0.36 + 5.76 + 11.56)/5 = 2.577
 
+## PROGRAM:
+```
+Developed by : KRISHNA PRAKAASH D M
+Register number : 212221230052
+```
+```
+#define fsrpin A0
+#define led1 2
+#define led2 3
+#define led3 4
+#define led4 5
+#define led5 6
+#define led6 7
+
+int fsrreading;
+void setup()
+{
+ Serial.begin(9600);
+ 
+ pinMode(led1, OUTPUT);
+ pinMode(led2, OUTPUT);
+ pinMode(led3, OUTPUT);
+ pinMode(led4, OUTPUT);
+ pinMode(led5, OUTPUT);
+ pinMode(led6, OUTPUT);
+}
+void loop()
+{
+ fsrreading = analogRead(fsrpin);
+ 
+ Serial.println(fsrreading);
+ 
+ if (fsrreading > 150)
+ {
+   digitalWrite(led1, HIGH);
+ }
+ else digitalWrite(led1, LOW);
+ 
+ if (fsrreading > 300)
+ {
+   digitalWrite(led2, HIGH);
+ }
+ else digitalWrite(led2, LOW);
+ 
+ if (fsrreading > 450)
+ {
+   digitalWrite(led3, HIGH);
+ }
+ else digitalWrite(led3, LOW);
+ 
+ if (fsrreading > 600)
+ {
+   digitalWrite(led4, HIGH);
+ }
+ else digitalWrite(led4, LOW);
+ 
+ if (fsrreading > 750)
+ {
+   digitalWrite(led5, HIGH);
+ }
+ else digitalWrite(led5, LOW);
+ 
+ if (fsrreading > 900)
+ {
+   digitalWrite(led6, HIGH);
+ }
+ else digitalWrite(led6, LOW);
+}
+```
+
+# OUTPUT:
+## Before simulation:
+![OUTPUT-01](IMG-01.PNG)
+## After simulation:
+![OUTPUT-02](IMG-02.PNG)
+## Graph:
+![OUTPUT-03](IMG-03.PNG)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-### RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
+## RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
