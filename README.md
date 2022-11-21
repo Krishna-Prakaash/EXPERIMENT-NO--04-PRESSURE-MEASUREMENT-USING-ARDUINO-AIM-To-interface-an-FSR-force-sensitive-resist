@@ -181,4 +181,5 @@ void loop()
 
 
 
-## RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
+## RESULTS :
+Arduino uno is interfaced with FSR and output values are indicated on a graph.
